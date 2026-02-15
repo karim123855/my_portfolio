@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareem Moussa | Machine Learning Engineer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Animations & Styles */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stroke-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-5%); }
+            50% { transform: translateY(5%); }
+        }
+        
+        /* Selection Color */
+        ::selection {
+            background-color: #a3e635; /* lime-400 */
+            color: black;
+        }
+
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3e635;
+        }
+
+        /* Glitch effect wrapper (optional future enhancement) */
+        .cyber-border {
+            position: relative;
+        }
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            border-radius: inherit;
+            background: linear-gradient(45deg, #a3e635, transparent, #a3e635);
+            z-index: -1;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-black text-white selection:bg-lime-400 selection:text-black overflow-x-hidden">
+
+    <!-- Floating Pill Navbar -->
+    <nav class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+        <div class="bg-black/60 backdrop-blur-xl border border-white/10 rounded-full pl-6 pr-2 py-2 flex items-center justify-between w-full max-w-4xl shadow-2xl shadow-lime-900/5">
+            
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                <div class="w-8 h-8 bg-zinc-800 rounded-full flex items-center justify-center text-lime-400 group-hover:bg-lime-400 group-hover:text-black transition-colors">
+                   <img src="Aivora2.png">
+                </div>
+                
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Skills</a>
+                <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Works</a>
+                <a href="#contact" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:block bg-gradient-to-r from-lime-400 to-lime-500 text-black text-xs font-bold px-6 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(163,230,53,0.4)] transition-all transform hover:scale-105">
+                    Hire me!
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 mt-4 bg-zinc-900/95 backdrop-blur-xl rounded-2xl p-6 flex flex-col space-y-4 border border-white/10 shadow-2xl text-center">
+                <a href="#about" class="text-gray-300 hover:text-lime-400 block py-2">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-lime-400 block py-2">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-lime-400 block py-2">Works</a>
+                <a href="#contact" class="text-gray-300 hover:text-lime-400 block py-2">Contact</a>
+                <a href="#contact" class="bg-lime-400 text-black font-bold px-6 py-3 rounded-full hover:bg-lime-300 inline-block mt-2">Hire me!</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main id="main-content" class="transition-opacity duration-500">
+        
+        <!-- Hero Section -->
+        <section class="relative w-full pt-40 pb-16 md:pt-48 md:pb-32 bg-zinc-950 overflow-hidden">
+            <!-- Grid Background -->
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(163,230,53,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(163,230,53,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                <!-- Left Content -->
+                <div class="space-y-8 relative z-10">
+                    <div class="inline-flex items-center space-x-2 bg-zinc-900/50 border border-lime-500/30 rounded-full px-4 py-2 backdrop-blur-sm">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-lime-500"></span>
+                        </span>
+                        <span class="text-lime-400 font-mono font-bold tracking-wider uppercase text-xs">Available for Hire</span>
+                    </div>
+                    
+                    <div class="relative z-20">
+                        <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tight">
+                            I'M <br />
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">
+                                KAREEM
+                            </span><br/>
+                            <span class="text-lime-400 inline-block relative">
+                                MOUSSA
+                                <svg class="absolute w-full h-4 -bottom-2 left-0 text-lime-400 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+                                </svg>
+                            </span>
+                        </h1>
+                    </div>
+                    
+                    <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
+                        Machine Learning Engineer dedicated to architecting scalable <span class="text-white font-semibold">AI solutions</span>. Based at <span class="text-lime-400">Mansoura University</span>, transforming data into algorithmic precision.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects" class="group bg-lime-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-lime-300 transition-all transform hover:scale-105 flex items-center shadow-[0_0_20px_rgba(163,230,53,0.4)]">
+                            View My Work
+                            <i data-lucide="arrow-up-right" class="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform duration-300"></i>
+                        </a>
+                        <button class="group bg-zinc-900 border border-zinc-800 text-white px-8 py-4 rounded-xl font-semibold hover:border-lime-400/50 hover:text-lime-400 transition-colors flex items-center">
+                            <i data-lucide="download" class="mr-2 w-4 h-4 group-hover:animate-bounce"></i>
+                            Download CV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative flex justify-center lg:justify-end items-center">
+                    <!-- Glow Effect -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-lime-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+                    
+                    <!-- Tech Ring Animation -->
+                    <div class="absolute inset-0 border border-dashed border-lime-500/20 rounded-full animate-spin-slow w-full h-full scale-125 pointer-events-none"></div>
+
+                    <!-- Image Container -->
+                    <div class="relative z-10 w-full max-w-md">
+                        <div class="relative rounded-[2.5rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900/50">
+                            <img 
+                                src="me.png" 
+                                alt="Kareem Moussa" 
+                                class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform"
+                            />
+                            
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+
+                            <!-- Floating Badges -->
+                            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                                <div>
+                                    <p class="text-lime-400 font-mono text-xs mb-1">CURRENTLY</p>
+                                    <p class="text-white font-bold text-lg">FCIS Student</p>
+                                </div>
+                                <div class="bg-lime-400 p-3 rounded-full text-black">
+                                    <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info Banner -->
+<section class="bg-black py-20 relative">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="relative rounded-[3rem] border border-white/10 bg-gradient-to-br from-zinc-900/60 to-zinc-800/30 backdrop-blur-xl p-10 shadow-2xl shadow-blue-900/20">
+
+            <!-- Glow background -->
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-lime-500/20 blur-3xl rounded-full pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
+
+                <!-- Card -->
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="graduation-cap" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Education</p>
+                    <p class="text-white font-bold text-lg">FCIS Mansoura</p>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="star" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Level</p>
+                    <p class="text-white font-bold text-lg">2 - Excellent</p>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="calendar" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Born</p>
+                    <p class="text-white font-bold text-lg">2006</p>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
+                    <i data-lucide="map-pin" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Location</p>
+                    <p class="text-white font-bold text-lg">Egypt</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- About Section -->
+    
+<!-- ABOUT ME SECTION -->
+<section id="about" class="relative py-28 bg-black overflow-hidden">
+
+    <!-- Soft Lime Glow Background -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 
+                w-[700px] h-[700px] 
+                bg-lime-400/10 blur-[140px] 
+                rounded-full pointer-events-none animate-pulse">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="inline-block text-2xl md:text-3xl font-semibold 
+                       tracking-widest uppercase 
+                       text-lime-400 relative">
+
+                About Me
+
+                <span class="absolute left-1/2 -translate-x-1/2 -bottom-2 
+                             w-16 h-[2px] 
+                             bg-gradient-to-r from-transparent via-lime-400 to-transparent 
+                             blur-sm">
+                </span>
+
+            </h2>
+        </div>
+
+        <!-- Glass Card -->
+        <div class="grid md:grid-cols-2 gap-14 items-center 
+                    p-12 rounded-3xl 
+                    border border-white/10 
+                    bg-gradient-to-br from-white/5 to-white/0 
+                    backdrop-blur-2xl 
+                    shadow-2xl shadow-lime-500/10 
+                    opacity-0 animate-fadeUp">
+
+            <!-- Left Content -->
+            <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+
+                <p>
+                    I am passionate about building intelligent systems and 
+                    transforming raw data into meaningful insights.
+                </p>
+
+                <p>
+                    I focus on Machine Learning, predictive modeling, 
+                    and developing scalable AI solutions.
+                </p>
+
+                <p class="text-lime-400 font-medium">
+                    Always learning. Always building.
+                </p>
+
+            </div>
+
+            <!-- Right Stats -->
+            <div class="grid gap-6">
+
+                <div class="p-6 rounded-2xl 
+                            bg-white/5 border border-white/10 
+                            backdrop-blur-xl 
+                            hover:border-lime-400/40 
+                            hover:scale-105
+                            transition duration-500">
+
+                    <h3 class="text-3xl font-bold text-lime-400">
+                        1+
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        Year Experience
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl 
+                            bg-white/5 border border-white/10 
+                            backdrop-blur-xl 
+                            hover:border-lime-400/40 
+                            hover:scale-105
+                            transition duration-500">
+
+                    <h3 class="text-3xl font-bold text-lime-400">
+                        4
+                    </h3>
+                    <p class="text-gray-400 mt-2">
+                        Projects Completed
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Animation -->
+<style>
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
+}
+</style>
+
+<!-- Custom Animation -->
+<style>
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeUp {
+    animation: fadeUp 1s ease forwards;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+</style>
+
+        <!-- Skills Section -->
+        <!-- SKILLS SECTION -->
+<section id="skills" class="relative py-28 bg-black overflow-hidden">
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 class="inline-block text-2xl md:text-3xl font-semibold 
+                       tracking-widest uppercase 
+                       text-lime-400 relative">
+
+                Skills
+
+                <span class="absolute left-1/2 -translate-x-1/2 -bottom-2 
+                             w-16 h-[2px] 
+                             bg-gradient-to-r from-transparent via-lime-400 to-transparent 
+                             blur-sm">
+                </span>
+
+            </h2>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+
+            <!-- Python -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-lime-400 overflow-hidden
+                        hover:scale-105 transition-transform">
+
+                <!-- Soft Inner Glow -->
+                <div class="absolute inset-0 rounded-3xl bg-lime-400/20 blur-2xl -z-10"></div>
+
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Python</span>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-orange-500 overflow-hidden
+                        hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-3xl bg-orange-500/20 blur-2xl -z-10"></div>
+                <img src="https://icon.icepanel.io/Technology/svg/scikit-learn.svg" alt="ML" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Machine Learning</span>
+            </div>
+
+            <!-- Numpy -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-cyan-400 overflow-hidden
+                        hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-3xl bg-cyan-400/20 blur-2xl -z-10"></div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="Numpy" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Numpy</span>
+            </div>
+
+            <!-- Pandas -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-green-400 overflow-hidden
+                        hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-3xl bg-green-400/20 blur-2xl -z-10"></div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Pandas</span>
+            </div>
+
+            <!-- Matplotlib -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-red-400 overflow-hidden
+                        hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-3xl bg-red-400/20 blur-2xl -z-10"></div>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Matplotlib</span>
+            </div>
+
+            <!-- Seaborn -->
+            <div class="skill-box relative bg-black/30 backdrop-blur-xl p-6 rounded-3xl flex flex-col items-center justify-center
+                        border border-blue-400 overflow-hidden
+                        hover:scale-105 transition-transform">
+                <div class="absolute inset-0 rounded-3xl bg-blue-400/20 blur-2xl -z-10"></div>
+                <img src="https://cdn.worldvectorlogo.com/logos/seaborn-1.svg" alt="Seaborn" class="w-16 h-16 mb-4">
+                <span class="text-white font-semibold">Seaborn</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Projects Section (Interactive Cards) -->
+        <section id="projects" class="bg-zinc-950 py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4">
+                            Projects<br />
+                            <!-- <span class="text-gray-500">.</span> -->
+                        </h2>
+                    </div>
+                    <a href="https://github.com" target="_blank" class="hidden md:flex items-center text-white border border-white/20 px-6 py-3 rounded-full hover:bg-lime-400 hover:text-black hover:border-lime-400 transition-all group">
+                        View All Code <i data-lucide="github" class="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 Card -->
+                    <div onclick="openProject(0)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-lime-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-lime-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded uppercase">Predictive Analytics</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-lime-400 transition-colors">Real Estate Valuation</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black group-hover:border-lime-400 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Predict housing prices with < 5% error using XGBoost and advanced feature engineering.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#Python</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#XGBoost</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#Scikit-Learn</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-gray-500">Key Metric:</span>
+                                    <span class="text-lime-400">MAPE: 4.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 Card -->
+                    <div onclick="openProject(1)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-lime-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-lime-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded uppercase">Computer Vision</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-lime-400 transition-colors">Pneumonia Detection</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black group-hover:border-lime-400 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Automated diagnosis from Chest X-Rays using ResNet50 and Transfer Learning.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#PyTorch</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#OpenCV</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#ResNet50</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-gray-500">Key Metric:</span>
+                                    <span class="text-lime-400">Recall: 96%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 Card -->
+                    <div onclick="openProject(2)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-lime-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-lime-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded uppercase">NLP</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-lime-400 transition-colors">Sentiment Analyzer</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black group-hover:border-lime-400 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Real-time classification of customer feedback using BERT and FastAPI.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#BERT</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#FastAPI</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#NLTK</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-gray-500">Key Metric:</span>
+                                    <span class="text-lime-400">Accuracy: 92%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 Card -->
+                    <div onclick="openProject(3)" class="group cursor-pointer bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-lime-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-lime-900/20 flex flex-col h-full">
+                        <div class="h-64 w-full relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-6">
+                                <span class="bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded uppercase">Anomaly Detection</span>
+                            </div>
+                        </div>
+                        <div class="p-8 relative flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-lime-400 transition-colors">Fraud Detection</h3>
+                                <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-black group-hover:border-lime-400 transition-all">
+                                    <i data-lucide="arrow-right" class="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6">Identifying financial fraud in real-time streams using Isolation Forest and SMOTE.</p>
+                            
+                            <!-- Tech Stack & Metrics -->
+                            <div class="mt-auto space-y-4">
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#Sklearn</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#Pandas</span>
+                                    <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#AWS</span>
+                                </div>
+                                <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
+                                    <span class="text-gray-500">Key Metric:</span>
+                                    <span class="text-lime-400">AUC-ROC: 0.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact" class="bg-black pt-20 pb-10 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="bg-zinc-900/50 border border-white/5 rounded-[3rem] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-lime-400/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+                    <div class="relative z-10 max-w-lg text-center md:text-left mb-10 md:mb-0">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's build something <span class="text-lime-400">intelligent.</span></h2>
+                        <p class="text-gray-400 mb-8">Open to internships and collaborative ML projects.</p>
+                        
+                        <form class="flex flex-col sm:flex-row gap-4" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
+                            <input type="email" placeholder="Your email address" class="bg-black/50 border border-white/10 text-white px-6 py-4 rounded-xl focus:outline-none focus:border-lime-400 flex-grow font-mono text-sm" required />
+                            <button type="submit" class="bg-lime-400 text-black font-bold px-8 py-4 rounded-xl hover:bg-lime-300 transition-colors shadow-lg shadow-lime-400/20">
+                                Send
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="relative z-10 flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-lime-400 hover:text-black hover:border-lime-400 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-lime-400 hover:text-black hover:border-lime-400 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center hover:bg-lime-400 hover:text-black hover:border-lime-400 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center text-gray-500 text-sm font-mono">
+                    <p>&copy; 2026 Kareem Moussa. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- PROJECT DETAIL MODAL (Overlay) -->
+    <div id="project-modal" class="fixed inset-0 z-[100] bg-black hidden overflow-y-auto backdrop-blur-sm bg-black/90">
+        <!-- Close Button (X) -->
+        <button onclick="closeProject()" class="fixed top-6 right-6 z-[120] bg-zinc-900 border border-white/20 text-white p-3 rounded-full hover:bg-lime-400 hover:text-black transition-all group">
+            <i data-lucide="x" class="w-6 h-6 group-hover:rotate-90 transition-transform duration-300"></i>
+        </button>
+
+        <!-- Project Content Container -->
+        <div class="min-h-screen relative">
+            <!-- Hero Image -->
+            <div class="h-[50vh] w-full relative">
+                <img id="modal-image" src="" alt="Project Cover" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black"></div>
+                
+                <!-- Back Button IN Modal Hero -->
+                <button onclick="closeProject()" class="absolute top-6 left-6 z-[120] flex items-center space-x-2 text-white/80 hover:text-lime-400 transition-colors bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="font-mono text-sm font-bold">Back to Home</span>
+                </button>
+
+                <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 max-w-7xl mx-auto">
+                    <span id="modal-domain" class="bg-lime-400 text-black px-3 py-1 rounded text-sm font-bold uppercase tracking-wider mb-4 inline-block"></span>
+                    <h1 id="modal-title" class="text-4xl md:text-6xl font-bold text-white mb-4"></h1>
+                </div>
+            </div>
+
+            <!-- Content Body -->
+            <div class="max-w-4xl mx-auto px-6 py-12">
+                
+                <!-- Quick Stats Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 border-b border-white/10 pb-12">
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Timeline</p>
+                        <p class="text-white font-mono">4 Weeks</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Role</p>
+                        <p class="text-white font-mono">ML Engineer</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Status</p>
+                        <p class="text-lime-400 font-mono">Completed</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-xs uppercase mb-1">Links</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-white hover:text-lime-400"><i data-lucide="github" class="w-5 h-5"></i></a>
+                            <a href="#" class="text-white hover:text-lime-400"><i data-lucide="external-link" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Description -->
+                <div class="space-y-12">
+                    
+                    <!-- The Challenge -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="target" class="text-lime-400 mr-3 w-6 h-6"></i> The Goal
+                        </h3>
+                        <p id="modal-goal" class="text-gray-300 leading-relaxed text-lg"></p>
+                    </div>
+
+                    <!-- Pipeline/Tech -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="layers" class="text-lime-400 mr-3 w-6 h-6"></i> The Pipeline
+                        </h3>
+                        <div id="modal-tech" class="flex flex-wrap gap-3">
+                            <!-- Tags injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Metrics/Result -->
+                    <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-6 flex items-center">
+                            <i data-lucide="bar-chart-3" class="text-lime-400 mr-3 w-6 h-6"></i> Performance Metrics
+                        </h3>
+                        <div id="modal-metrics" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Metrics injected by JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // --- PROJECT DATA & MODAL LOGIC ---
+        
+        const projectsData = [
+            {
+                title: "Real Estate Valuation",
+                domain: "Predictive Analytics",
+                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                goal: "The objective was to predict housing prices with a Mean Absolute Percentage Error (MAPE) of less than 5% to assist real estate investors in making data-driven decisions.",
+                tech: ["Python", "XGBoost", "Scikit-Learn", "Web Scraping", "Pandas"],
+                metrics: [
+                    { label: "MAPE", value: "4.2%" },
+                    { label: "R2 Score", value: "0.91" }
+                ]
+            },
+            {
+                title: "Pneumonia Detection",
+                domain: "Computer Vision",
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                goal: "To build an automated diagnostic tool capable of detecting signs of pneumonia in Chest X-Ray images, reducing radiologist workload and providing a second opinion.",
+                tech: ["PyTorch", "ResNet50", "OpenCV", "Docker", "Data Augmentation"],
+                metrics: [
+                    { label: "Recall", value: "96%" },
+                    { label: "F1-Score", value: "0.94" }
+                ]
+            },
+            {
+                title: "Sentiment Analyzer",
+                domain: "NLP",
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                goal: "Develop a real-time sentiment classification system for e-commerce reviews to automatically flag negative feedback for customer support intervention.",
+                tech: ["HuggingFace Transformers", "BERT", "NLTK", "FastAPI", "Python"],
+                metrics: [
+                    { label: "Accuracy", value: "92%" },
+                    { label: "Inference Latency", value: "<100ms" }
+                ]
+            },
+            {
+                title: "Fraud Detection",
+                domain: "Anomaly Detection",
+                image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+                goal: "Identify fraudulent financial transactions in real-time data streams to prevent financial loss, handling heavily imbalanced datasets.",
+                tech: ["Scikit-Learn", "Isolation Forest", "SMOTE", "AWS SageMaker", "Pandas"],
+                metrics: [
+                    { label: "Precision", value: "0.98" },
+                    { label: "AUC-ROC", value: "0.99" }
+                ]
+            }
+        ];
+
+        const mainContent = document.getElementById('main-content');
+        const projectModal = document.getElementById('project-modal');
+
+        // Elements to update in modal
+        const modalTitle = document.getElementById('modal-title');
+        const modalDomain = document.getElementById('modal-domain');
+        const modalImage = document.getElementById('modal-image');
+        const modalGoal = document.getElementById('modal-goal');
+        const modalTech = document.getElementById('modal-tech');
+        const modalMetrics = document.getElementById('modal-metrics');
+
+        function openProject(index) {
+            const project = projectsData[index];
+            
+            // Populate Data
+            modalTitle.innerText = project.title;
+            modalDomain.innerText = project.domain;
+            modalImage.src = project.image;
+            modalGoal.innerText = project.goal;
+            
+            // Clear & Populate Tech Tags
+            modalTech.innerHTML = '';
+            project.tech.forEach(tech => {
+                const tag = document.createElement('span');
+                tag.className = 'bg-zinc-800 text-lime-400 px-3 py-1 rounded-full text-sm font-mono border border-lime-400/20';
+                tag.innerText = tech;
+                modalTech.appendChild(tag);
+            });
+
+            // Clear & Populate Metrics
+            modalMetrics.innerHTML = '';
+            project.metrics.forEach(metric => {
+                const div = document.createElement('div');
+                div.className = 'border-l-4 border-lime-400 pl-4';
+                div.innerHTML = `
+                    <p class="text-gray-500 text-xs uppercase tracking-wider mb-1">${metric.label}</p>
+                    <p class="text-3xl font-bold text-white">${metric.value}</p>
+                `;
+                modalMetrics.appendChild(div);
+            });
+
+            // Show Modal & Hide Scroll on Body
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Re-run icons for the modal content
+            lucide.createIcons();
+        }
+
+        function closeProject() {
+            projectModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeProject();
+            }
+        });
+    </script>
+</body>
+</html>
