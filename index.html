@@ -12,6 +12,29 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+        /* تأثير الدخول التدريجي */
+    @keyframes entrance {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-entrance {
+        animation: entrance 0.8s ease-out forwards;
+    }
+
+    /* توقيتات التأخير */
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-700 { animation-delay: 0.7s; }
+    .delay-1000 { animation-delay: 1s; }
+
         /* Custom Animations & Styles */
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
 
@@ -133,7 +156,8 @@
     <main id="main-content" class="transition-opacity duration-500">
         
         <!-- Hero Section -->
-        <section class="relative w-full pt-24 pb-16 md:pt-48 md:pb-32 bg-zinc-90 overflow-hidden mt--10">
+         
+        <section class="relative h-screen flex items-center pt-24 pb-16 md:pt-40 md:pb-32 bg-zinc-90 overflow-hidden mt-0">
             <!-- Grid Background -->
             <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
             <div class="absolute inset-0 bg-[linear-gradient(rgba(163,230,53,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(163,230,53,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -146,7 +170,7 @@
                             bg-gradient-to-br from-white/5 to-white/0 
                             backdrop-blur-3xl 
                             shadow-2xl shadow-lime-500/10 
-                            p-20 md:p-20">
+                            p-20 md:p-20 mt-0 ">
             
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -163,12 +187,12 @@
                     </div>
                     
                     <div class="relative z-20">
-                        <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tight">
+                        <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-[0.9] tracking-tight opacity-0 animate-entrance delay-300">
                             I'M <br />
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500 opacity-0 animate-entrance delay-300">
                                 KAREEM
                             </span><br/>
-                            <span class="text-lime-400 inline-block relative">
+                            <span class="text-lime-400 inline-block relative opacity-0 animate-entrance delay-300">
                                 MOUSSA
                                 <svg class="absolute w-full h-4 -bottom-2 left-0 text-lime-400 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
                                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -177,16 +201,16 @@
                         </h1>
                     </div>
                     
-                    <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-                        Machine Learning Engineer dedicated to architecting scalable <span class="text-white font-semibold">AI solutions</span>. Based at <span class="text-lime-400">Mansoura University</span>, transforming data into algorithmic precision.
+                    <p class="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-light opacity-0 animate-entrance delay-300">
+                        Machine Learning Engineer dedicated to architecting scalable <span class="text-white font-semibold opacity-0 animate-entrance delay-300">AI solutions</span>. Based at <span class="text-lime-400 opacity-0 animate-entrance delay-300">Mansoura University</span>, transforming data into algorithmic precision.
                     </p>
 
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#projects" class="group bg-lime-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-lime-300 transition-all transform hover:scale-105 flex items-center shadow-[0_0_20px_rgba(163,230,53,0.4)]">
+                        <a href="#projects" class="group bg-lime-400 text-black px-8 py-4 rounded-xl font-bold hover:bg-lime-300 transition-all transform hover:scale-105 flex items-center shadow-[0_0_20px_rgba(163,230,53,0.4)] opacity-0 animate-entrance delay-300">
                             View My Work
-                            <i data-lucide="arrow-up-right" class="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform duration-300"></i>
+                            <i data-lucide="arrow-up-right" class="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform duration-300 "></i>
                         </a>
-                        <button class="group bg-zinc-900 border border-zinc-800 text-white px-8 py-4 rounded-xl font-semibold hover:border-lime-400/50 hover:text-lime-400 transition-colors flex items-center">
+                        <button class="group bg-zinc-900 border border-zinc-800 text-white px-8 py-4 rounded-xl font-semibold hover:border-lime-400/50 hover:text-lime-400 transition-colors flex items-center opacity-0 animate-entrance delay-300">
                             <i data-lucide="download" class="mr-2 w-4 h-4 group-hover:animate-bounce"></i>
                             Download CV
                         </button>
@@ -194,7 +218,7 @@
                 </div>
 
                 <!-- Right Image -->
-                <div class="relative flex justify-center lg:justify-end items-center">
+                <div class="relative flex justify-center lg:justify-end items-center opacity-0 animate-entrance delay-300">
                     <!-- Glow Effect -->
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-lime-500/10 rounded-full blur-[100px] pointer-events-none"></div>
                     
@@ -216,11 +240,11 @@
                             <!-- Floating Badges -->
                             <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                                 <div>
-                                    <p class="text-lime-400 font-mono text-xs mb-1">CURRENTLY</p>
-                                    <p class="text-white font-bold text-lg">FCIS Student</p>
+                                    <p class="text-lime-400 font-mono text-xs mb-1 opacity-0 animate-entrance delay-300">CURRENTLY</p>
+                                    <p class="text-white font-bold text-lg opacity-0 animate-entrance delay-300">FCIS Student</p>
                                 </div>
                                 <div class="bg-lime-400 p-3 rounded-full text-black">
-                                    <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                                    <i data-lucide="brain-circuit" class="w-6 h-6 "></i>
                                 </div>
                             </div>
                         </div>
@@ -249,19 +273,19 @@
                 <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
                     <i data-lucide="star" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
                     <p class="text-gray-500 text-xs font-mono uppercase mb-1">Level</p>
-                    <p class="text-white font-bold text-lg">2 - Excellent</p>
+                    <p class="text-white font-bold text-lg">2-Excellent</p>
                 </div>
 
                 <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
                     <i data-lucide="calendar" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Born</p>
-                    <p class="text-white font-bold text-lg">2006</p>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Birth</p>
+                    <p class="text-white font-bold text-lg">20 Aug 2006</p>
                 </div>
 
                 <div class="group p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-blue-400/40 transition-all">
                     <i data-lucide="map-pin" class="text-lime-400 w-8 h-8 mb-4 group-hover:scale-110 transition-transform"></i>
-                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">Location</p>
-                    <p class="text-white font-bold text-lg">Egypt</p>
+                    <p class="text-gray-500 text-xs font-mono uppercase mb-1">City</p>
+                    <p class="text-white font-bold text-lg">Mansoura</p>
                 </div>
 
             </div>
@@ -536,8 +560,7 @@
                                     <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#Scikit-Learn</span>
                                 </div>
                                 <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
-                                    <span class="text-gray-500">Key Metric:</span>
-                                    <span class="text-lime-400">MAPE: 4.2%</span>
+                                    <span class="text-lime-400 text-xl">MAPE: 4.2%</span>
                                 </div>
                             </div>
                         </div>
@@ -569,8 +592,7 @@
                                     <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#ResNet50</span>
                                 </div>
                                 <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
-                                    <span class="text-gray-500">Key Metric:</span>
-                                    <span class="text-lime-400">Recall: 96%</span>
+                                    <span class="text-lime-400 text-xl">Recall: 96%</span>
                                 </div>
                             </div>
                         </div>
@@ -602,8 +624,7 @@
                                     <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#NLTK</span>
                                 </div>
                                 <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
-                                    <span class="text-gray-500">Key Metric:</span>
-                                    <span class="text-lime-400">Accuracy: 92%</span>
+                                    <span class="text-lime-400 text-xl">Accuracy: 92%</span>
                                 </div>
                             </div>
                         </div>
@@ -635,8 +656,7 @@
                                     <span class="text-xs bg-zinc-900 text-gray-400 px-2 py-1 rounded border border-white/10">#AWS</span>
                                 </div>
                                 <div class="pt-4 border-t border-white/10 flex justify-between text-xs font-mono">
-                                    <span class="text-gray-500">Key Metric:</span>
-                                    <span class="text-lime-400">AUC-ROC: 0.99</span>
+                                    <span class="text-lime-400 text-xl">AUC-ROC: 0.99</span>
                                 </div>
                             </div>
                         </div>
@@ -656,7 +676,7 @@
                         <p class="text-gray-400 mb-8">Open to internships and collaborative ML projects.</p>
                         
                         <form class="flex flex-col sm:flex-row gap-4" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
-                            <input type="email" placeholder="Your email address" class="bg-black/50 border border-white/10 text-white px-6 py-4 rounded-xl focus:outline-none focus:border-lime-400 flex-grow font-mono text-sm" required />
+                            <input type="text" placeholder="Your message here" class="bg-black/50 border border-white/10 text-white px-6 py-4 rounded-xl focus:outline-none focus:border-lime-400 flex-grow font-mono text-sm" required />
                             <button type="submit" class="bg-lime-400 text-black font-bold px-8 py-4 rounded-xl hover:bg-lime-300 transition-colors shadow-lg shadow-lime-400/20">
                                 Send
                             </button>
