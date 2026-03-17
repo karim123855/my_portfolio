@@ -340,7 +340,7 @@
                                         </p>
                                         <p
                                             class="text-blue-500/80 font-mono text-[10px] md:text-xs mt-2 uppercase tracking-widest opacity-0 animate-entrance delay-1000">
-                                            — Godfrey Reggio -
+                                            — Godfrey Reggio
                                         </p>
                                     </div>
                                 </div>
@@ -385,54 +385,55 @@
                     </h2>
                 </div>
 
-                <!-- Glass Card -->
-                <div class="grid md:grid-cols-2 gap-10 lg:gap-14 items-center 
-                    p-6 md:p-12 rounded-3xl 
-                    border border-white/10 
-                    bg-gradient-to-br from-white/5 to-white/0 
-                    backdrop-blur-2xl 
-                    shadow-2xl shadow-blue-600/10 
-                    opacity-0 animate-fadeUp">
+                <!-- Container for both cards -->
+                <div class="grid md:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-stretch">
+                
+                    <!-- Glass Card (Main Content) -->
+                    <div class="p-6 md:p-12 rounded-3xl 
+                        border border-white/10 
+                        bg-gradient-to-br from-white/5 to-white/0 
+                        backdrop-blur-2xl 
+                        shadow-2xl shadow-blue-600/10 
+                        opacity-0 animate-fadeUp h-full flex items-center">
 
-                    <!-- Left Content -->
-                    <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+                        <div class="space-y-6 text-gray-300 text-lg leading-relaxed w-full">
 
-                        <p>
-                            I am a Machine Learning Engineer at FCIS Mansoura and a DEPI Microsoft ML Trainee.
-                            My focus is on turning complex datasets into actionable intelligence
-                        </p>
+                            <p>
+                                I am a Machine Learning Engineer at FCIS Mansoura and a DEPI Microsoft ML Intern.
+                                My focus is on turning complex datasets into actionable intelligence
+                            </p>
 
-                        <p>
-                            I specialize in the full data lifecycle—from performing deep EDA and feature engineering to
-                            architecting high-accuracy Predictive Models with Scikit-learn,
-                            recently achieving 99% accuracy in diagnostic classification projects.
-                        </p>
+                            <p>
+                                I help businesses and individuals turn raw, messy data into clear 
+                                insights and accurate predictions by using practical 
+                                machine learning models and data-driven analysis.
+                            </p>
 
-                        <p class="text-blue-500 font-medium flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            Based in Mansoura, Egypt.
-                        </p>
+                            <p class="text-blue-500 font-medium flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                Based in Mansoura, Egypt.
+                            </p>
+
+                        </div>
 
                     </div>
 
-                    <!-- Right Stats -->
-                    <div class="grid gap-6">
+                    <!-- Right Stats (Standalone) -->
+                    <div class="p-6 rounded-2xl w-44 aspect-square flex flex-col justify-center items-center text-center
+                        bg-white/5 border border-white/10 
+                        backdrop-blur-xl 
+                        hover:border-blue-500/40 
+                        hover:scale-105
+                        transition duration-500
+                        shadow-2xl shadow-blue-600/10
+                        opacity-0 animate-fadeUp h-full md:h-auto md:self-stretch" style="animation-delay: 0.2s;">
 
-                        <div class="p-6 rounded-2xl 
-                            bg-white/5 border border-white/10 
-                            backdrop-blur-xl 
-                            hover:border-blue-500/40 
-                            hover:scale-105
-                            transition duration-500">
-
-                            <h3 class="text-3xl font-bold text-blue-500">
-                                120+
-                            </h3>
-                            <p class="text-gray-400 mt-2">
-                                Hours Training
-                            </p>
-                        </div>
-
+                        <h3 class="text-3xl font-bold text-blue-500">
+                            120+
+                        </h3>
+                        <p class="text-gray-400 mt-2">
+                            Training Hours
+                        </p>
                     </div>
 
                 </div>
@@ -598,7 +599,7 @@
                                     <div>
                                         <h3
                                             class="text-2xl font-bold text-white group-hover:text-blue-500 transition-colors">
-                                            DEPI Trainee: AI and Data Science</h3>
+                                            DEPI Intern: AI and Data Science</h3>
                                         <p class="text-gray-400 font-medium">Digital Egypt Pioneers Initiative (DEPI) •
                                             Microsoft ML Track</p>
                                     </div>
@@ -881,10 +882,10 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
                     <!-- Left: Technical Skills (Domains) -->
-                    <div class="space-y-6">
+                    <div class="flex flex-col gap-6 h-full min-h-[460px]">
                         <!-- EDA -->
                         <div
-                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden">
+                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden flex-1 flex flex-col justify-center">
                             <!-- Background Image with Fade (Left) -->
                             <div class="absolute inset-y-0 left-0 w-full md:w-3/4 pointer-events-none overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
@@ -903,7 +904,7 @@
 
                         <!-- ML -->
                         <div
-                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden">
+                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden flex-1 flex flex-col justify-center">
                             <!-- Background Image with Fade (Left) -->
                             <div class="absolute inset-y-0 left-0 w-full md:w-3/4 pointer-events-none overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=1000"
@@ -922,7 +923,7 @@
 
                         <!-- DL -->
                         <div
-                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden">
+                            class="relative bg-black p-6 rounded-[2rem] border border-white/10 group hover:border-blue-500/40 transition-all overflow-hidden flex-1 flex flex-col justify-center">
                             <!-- Background Image with Fade (Left) -->
                             <div class="absolute inset-y-0 left-0 w-full md:w-3/4 pointer-events-none overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000"
@@ -1255,96 +1256,6 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="bg-zinc-950 py-24 relative overflow-hidden">
-            <div
-                class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent">
-            </div>
-
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">What People <span
-                            class="italic text-blue-500">Say.</span></h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div
-                        class="group bg-zinc-900/50 border border-white/10 p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-500 flex flex-col relative overflow-hidden">
-                        <div class="text-blue-500 mb-6 flex space-x-1">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-8 italic">"Kareem transformed our raw marketing data
-                            into actionable insights that doubled our conversion rate. His ML models are incredibly
-                            accurate!"</p>
-                        <div class="mt-auto flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border border-blue-500/30">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80"
-                                    alt="John Doe" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">John Doe</h4>
-                                <p class="text-gray-500 text-xs">Founder, TechVision</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div
-                        class="group bg-zinc-900/50 border border-white/10 p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-500 flex flex-col relative overflow-hidden">
-                        <div class="text-blue-500 mb-6 flex space-x-1">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-8 italic">"The Breast Cancer Detection project shows
-                            his deep understanding of medical AI. His attention to data preprocessing is world-class."
-                        </p>
-                        <div class="mt-auto flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border border-blue-500/30">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80"
-                                    alt="Sarah Reed" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">Sarah Reed</h4>
-                                <p class="text-gray-500 text-xs">Lead Researcher, BioMed</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div
-                        class="group bg-zinc-900/50 border border-white/10 p-8 rounded-[2rem] hover:border-blue-500/50 transition-all duration-500 flex flex-col relative overflow-hidden">
-                        <div class="text-blue-500 mb-6 flex space-x-1">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4"></i>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-8 italic">"Incredible problem solver! He didn't just
-                            build the model; he explained the 'why' behind every feature. A true professional."</p>
-                        <div class="mt-auto flex items-center space-x-4">
-                            <div class="w-12 h-12 rounded-full overflow-hidden border border-blue-500/30">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
-                                    alt="Mike Kaiser" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm">Mike Kaiser</h4>
-                                <p class="text-gray-500 text-xs">CTO, DataFlow</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
         <!-- Packages Section -->
         <section id="packages" class="bg-black py-24 relative overflow-hidden">
@@ -1460,7 +1371,7 @@
 
                     <div class="flex flex-col space-y-6">
                         <div class="flex flex-wrap gap-4">
-                            <a href="https://mostaql.com/u/karim123855" target="_blank" rel="noopener noreferrer"
+                            <a href="https://mostaql.com/u/K_moussa" target="_blank" rel="noopener noreferrer"
                                 title="Mostaql"
                                 class="w-10 h-10 rounded-full bg-black border border-white/10 flex items-center justify-center overflow-hidden hover:border-blue-500/50 transition-colors">
                                 <img src="mostaql.png" alt="Mostaql" class="w-full h-full object-cover">
@@ -1478,7 +1389,7 @@
                             <a href="https://kafiil.com/u/karim_moussa37" target="_blank" rel="noopener noreferrer"
                                 title="Kaf"
                                 class="w-10 h-10 rounded-full bg-black border border-white/10 flex items-center justify-center overflow-hidden hover:border-blue-500/50 transition-colors">
-                                <img src="Kaf.png" alt="Kaf" class="w-full h-full object-cover">
+                                <img src="kaf.png" alt="Kaf" class="w-full h-full object-cover">
                             </a>
                             <a href="https://nafezly.com/u/karim_mousa" target="_blank" rel="noopener noreferrer"
                                 title="Nafezly"
@@ -1498,7 +1409,7 @@
                                 class="w-10 h-10 rounded-full bg-black border border-white/10 flex items-center justify-center overflow-hidden hover:border-blue-500/50 transition-colors">
                                 <img src="github.png" alt="GitHub" class="w-full h-full object-cover">
                             </a>
-                            <a href="mailto:kmr762038@gmail.com?subject=ML%20Project%20Inquiry" target="_blank"
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kmr762038@gmail.com&su=ML%20Project%20Inquiry" target="_blank"
                                 class="w-10 h-10 rounded-full bg-black border border-white/10 flex items-center justify-center overflow-hidden hover:border-blue-500/50 transition-colors">
                                 <img src="gmail.png" alt="Email" class="w-full h-full object-cover">
                             </a>
@@ -1508,10 +1419,8 @@
 
                 <div class="relative z-10 w-full lg:w-1/3">
                     <form id="inquiry-form" class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 gap-4">
                             <input id="inquiry-name" type="text" placeholder="Name"
-                                class="bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-blue-500 outline-none transition-colors">
-                            <input id="inquiry-phone" type="tel" placeholder="Phone"
                                 class="bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-blue-500 outline-none transition-colors">
                         </div>
                         <select id="package-select"
@@ -1641,22 +1550,27 @@
                         <div id="modal-metrics" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Metrics injected by JS -->
                         </div>
-                        <section>
-                            <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
-                                <i data-lucide="bar-chart-3" class="text-blue-500 mr-4 w-7 h-7"></i> Performance Metrics
-                            </h3>
-                            <div id="modal-metrics" class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                <!-- Metrics dynamic -->
-                            </div>
-                        </section>
 
                         <!-- Gallery -->
                         <section class="mt-20">
                             <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
                                 <i data-lucide="image" class="text-blue-500 mr-4 w-7 h-7"></i> Visualization Gallery
                             </h3>
-                            <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Photos dynamic -->
+                            <!-- Slider Container -->
+                            <div id="modal-slider-container" class="relative group w-full bg-black/20 rounded-2xl border border-white/10 overflow-hidden shadow-2xl flex items-center justify-center min-h-[300px] md:min-h-[500px]">
+                                <div id="modal-gallery" class="flex transition-transform duration-500 ease-in-out w-full h-[300px] md:h-[500px]">
+                                    <!-- Slides injected by JS -->
+                                </div>
+                                <!-- Controls -->
+                                <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 text-white p-3 rounded-full hover:bg-blue-500 transition-colors z-10 border border-white/10 opacity-0 group-hover:opacity-100 disabled:opacity-30">
+                                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                                </button>
+                                <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 text-white p-3 rounded-full hover:bg-blue-500 transition-colors z-10 border border-white/10 opacity-0 group-hover:opacity-100 disabled:opacity-30">
+                                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                                </button>
+                                <!-- Indicators -->
+                                <div id="slider-indicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -1664,9 +1578,9 @@
 
                 <!-- Footer Call to Action -->
                 <div class="max-w-4xl mx-auto px-6 py-24 border-t border-white/10 text-center">
-                    <h2 class="text-3xl font-bold text-white mb-8 italic">Interested in similar AI solutions?</h2>
+                    <h2 class="text-3xl font-bold text-white mb-8">Interested in similar AI solutions?</h2>
                     <button
-                        onclick="closeProject(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+                        onclick="closeProject(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 300);"
                         class="inline-flex items-center bg-blue-500 text-black px-10 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20">
                         Let's Discuss Your Project <i data-lucide="message-square" class="ml-2 w-5 h-5"></i>
                     </button>
@@ -1719,7 +1633,7 @@
                         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
                         "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800",
                         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-                        "https://images.unsplash.com/photo-1504868584819-f8e905b6dc79?auto=format&fit=crop&q=80&w=800"
+                        "https://www.w3schools.com/html/mov_bbb.mp4"
                     ]
                 },
                 {
@@ -1742,7 +1656,7 @@
                         "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=800",
                         "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
                         "https://images.unsplash.com/photo-1559828589-72ed83b02467?auto=format&fit=crop&q=80&w=800",
-                        "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=800"
+                        "https://www.w3schools.com/html/mov_bbb.mp4"
                     ]
                 }
             ];
@@ -1787,24 +1701,26 @@
             document.querySelector('#inquiry-form button').addEventListener('click', function () {
                 const form = document.getElementById('inquiry-form');
                 const name = document.getElementById('inquiry-name').value;
-                const phone = document.getElementById('inquiry-phone').value;
-                const package = document.getElementById('package-select').value;
-                const message = document.getElementById('inquiry-message').value;
+                const selectedPackage = document.getElementById('package-select').value;
+                const inquiryMessage = document.getElementById('inquiry-message').value;
 
                 // Simple validation
-                if (!name || !phone || !message) {
-                    alert('Please fill in Name, Phone, and Message.');
+                if (!name) {
+                    alert('Please fill in your Name.');
                     return;
                 }
 
                 // Construct WhatsApp Message
-                let whatsappText = `Hi Kareem! My name is ${name}. %0A`;
-                if (package) {
-                    whatsappText += `Package: ${package} %0AMessage: ${message}`;
-                } else {
-                    whatsappText += `${message}`;
+                let lines = [`Hello Kareem i'm ${name},`];
+                if (selectedPackage) {
+                    lines.push(`Let me get more information about '${selectedPackage}' ,`);
                 }
-                const whatsappUrl = `https://wa.me/201099941867?text=${encodeURIComponent(whatsappText)}`;
+                if (inquiryMessage) {
+                    lines.push(inquiryMessage);
+                }
+                
+                const encodedText = encodeURIComponent(lines.join('\n'));
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=201099941867&text=${encodedText}`;
 
                 // Open WhatsApp
                 window.open(whatsappUrl, '_blank');
@@ -1864,15 +1780,37 @@
                 });
 
                 // Clear & Populate Gallery
+                currentSlide = 0;
+                const indicators = document.getElementById('slider-indicators');
+                indicators.innerHTML = '';
                 modalGallery.innerHTML = '';
+                
                 if (project.gallery && project.gallery.length > 0) {
                     modalGallery.parentElement.classList.remove('hidden'); // Ensure gallery section is visible
-                    project.gallery.forEach(imgUrl => {
-                        const img = document.createElement('img');
-                        img.src = imgUrl;
-                        img.className = 'w-full aspect-video object-cover rounded-xl border border-white/10 hover:border-blue-500/50 transition-colors shadow-lg';
-                        modalGallery.appendChild(img);
+                    totalSlides = project.gallery.length;
+                    
+                    project.gallery.forEach((mediaUrl, index) => {
+                        // Create slide item
+                        if (mediaUrl.toLowerCase().endsWith('.mp4') || mediaUrl.toLowerCase().endsWith('.webm')) {
+                            const video = document.createElement('video');
+                            video.src = mediaUrl;
+                            video.className = 'w-full h-full flex-shrink-0 object-contain block bg-zinc-950/50';
+                            video.controls = true;
+                            modalGallery.appendChild(video);
+                        } else {
+                            const img = document.createElement('img');
+                            img.src = mediaUrl;
+                            img.className = 'w-full h-full flex-shrink-0 object-contain block bg-zinc-950/50';
+                            modalGallery.appendChild(img);
+                        }
+                        
+                        // Create dot
+                        const dot = document.createElement('button');
+                        dot.className = `h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-blue-500 w-6' : 'bg-white/30 w-2'}`;
+                        dot.onclick = () => goToSlide(index);
+                        indicators.appendChild(dot);
                     });
+                    updateSlider();
                 } else {
                     modalGallery.parentElement.classList.add('hidden'); // Hide completely if no gallery
                 }
@@ -1905,14 +1843,43 @@
                 }
             });
 
-            // Cursor Light Logic
-            const cursorLight = document.getElementById('cursor-light');
-            document.addEventListener('mousemove', (e) => {
-                cursorLight.style.left = e.clientX + 'px';
-                cursorLight.style.top = e.clientY + 'px';
-            });
-            // Only show cursor light on mouse movement (avoids showing at 0,0 on mobile)
-            document.addEventListener('mousemove', () => cursorLight.style.display = 'block', { once: true });
+            // Slider JS Logic
+            let currentSlide = 0;
+            let totalSlides = 0;
+
+            function updateSlider() {
+                const track = document.getElementById('modal-gallery');
+                if(!track) return;
+                
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Stop all playing videos on slide change
+                const videos = track.querySelectorAll('video');
+                videos.forEach(v => v.pause());
+
+                const dots = document.querySelectorAll('#slider-indicators button');
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('bg-blue-500', 'w-6');
+                        dot.classList.remove('bg-white/30', 'w-2');
+                    } else {
+                        dot.classList.remove('bg-blue-500', 'w-6');
+                        dot.classList.add('bg-white/30', 'w-2');
+                    }
+                });
+            }
+
+            function changeSlide(direction) {
+                currentSlide += direction;
+                if (currentSlide < 0) currentSlide = totalSlides - 1;
+                if (currentSlide >= totalSlides) currentSlide = 0;
+                updateSlider();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateSlider();
+            }
         </script>
 
         <!-- Cursor Follow Light -->
