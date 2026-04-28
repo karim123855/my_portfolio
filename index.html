@@ -227,7 +227,7 @@
         <!-- Hero Section -->
 
         <section
-            class="relative h-screen flex items-center pt-24 pb-16 md:pt-40 md:pb-32 bg-zinc-90 overflow-hidden mt-0">
+            class="relative min-h-screen flex items-start lg:items-center pt-32 pb-16 md:pt-40 md:pb-32 bg-black overflow-x-hidden mt-0">
             <!-- Grid Background -->
             <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
             <div
@@ -324,7 +324,7 @@
                                 <div
                                     class="relative rounded-[2.5rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900/50">
                                     <img src="me2.png" alt="Kareem Moussa"
-                                        class="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform" />
+                                        class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform origin-top" />
 
                                     <!-- Overlay Gradient -->
                                     <div
@@ -656,7 +656,7 @@
                 </div>
 
                 <!-- Services Grid -->
-                <div class="grid md:grid-cols-2 gap-10">
+                <div class="grid md:grid-cols-3 gap-10">
 
                     <!-- EDA Service Card -->
                     <div
@@ -770,42 +770,7 @@
                         </div>
                     </div>
 
-                    <!-- Graphic Design Service Card -->
-                    <div
-                        class="group bg-black border border-white/10 rounded-3xl overflow-hidden hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/20 flex flex-col h-full shadow-xl">
-                        <div class="h-48 w-full relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Graphic Design"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent">
-                            </div>
-                            <div class="absolute bottom-4 left-6">
-                                <div class="bg-blue-500/20 backdrop-blur-md p-2 rounded-lg border border-blue-500/30">
-                                    <i data-lucide="palette" class="text-blue-500 w-6 h-6"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-8 relative flex-grow flex flex-col">
-                            <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-blue-500 transition-colors">
-                                Graphic Design & Logos</h3>
-                            <div class="mb-6">
-                                <p class="text-gray-400 text-xs font-mono uppercase tracking-wider mb-2">What it is</p>
-                                <p class="text-gray-300 leading-relaxed text-sm">Creating visual identities and branding
-                                    elements that communicate a clean, professional, and modern aesthetic.</p>
-                            </div>
-                            <div class="mt-auto">
-                                <p class="text-blue-500 text-xs font-mono uppercase tracking-wider mb-3">Workflow</p>
-                                <ul class="text-gray-400 space-y-2 text-sm">
-                                    <li class="flex items-center"><i data-lucide="check"
-                                            class="w-4 h-4 text-blue-500 mr-2"></i> Custom logo design and vector
-                                        creation</li>
-                                    <li class="flex items-center"><i data-lucide="check"
-                                            class="w-4 h-4 text-blue-500 mr-2"></i> Visual branding and color theory
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -1148,18 +1113,17 @@
 
         <section id="projects" class="bg-zinc-950 py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-white mt-4">
-                            Projects<br />
-                            <!-- <span class="text-gray-500">.</span> -->
-                        </h2>
-                    </div>
-                    <a href="https://github.com" target="_blank"
-                        class="hidden md:flex items-center text-white border border-white/20 px-6 py-3 rounded-full hover:bg-blue-500 hover:text-black hover:border-blue-500 transition-all group">
-                        View All Code <i data-lucide="github"
-                            class="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform"></i>
-                    </a>
+                <div class="text-center mb-16">
+                    <h2 class="inline-block text-2xl md:text-3xl font-semibold 
+                               tracking-widest uppercase 
+                               text-blue-500 relative">
+                        Projects
+                        <span class="absolute left-1/2 -translate-x-1/2 -bottom-2 
+                                     w-16 h-[2px] 
+                                     bg-gradient-to-r from-transparent via-blue-500 to-transparent 
+                                     blur-sm">
+                        </span>
+                    </h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1280,7 +1244,7 @@
                             <p class="text-gray-400 text-sm">Perfect for quick data insights and cleanup.</p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-white">$89</span>
+                            <span class="text-4xl font-bold text-white">$15</span>
                             <span class="text-gray-500 text-sm font-mono">/package</span>
                         </div>
                         <ul class="space-y-4 mb-10 text-sm text-gray-300">
@@ -1309,7 +1273,7 @@
                             <p class="text-gray-400 text-sm">End-to-end predictive modeling & AI flow.</p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-white">$199</span>
+                            <span class="text-4xl font-bold text-white">$90</span>
                             <span class="text-gray-500 text-sm font-mono">/package</span>
                         </div>
                         <ul class="space-y-4 mb-10 text-sm text-gray-300">
@@ -1335,7 +1299,7 @@
                             <p class="text-gray-400 text-sm">Complex datasets and custom AI architecture.</p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-white">$299</span>
+                            <span class="text-4xl font-bold text-white">$199</span>
                             <span class="text-gray-500 text-sm font-mono">/package</span>
                         </div>
                         <ul class="space-y-4 mb-10 text-sm text-gray-300">
@@ -1356,9 +1320,10 @@
             </div>
         </section>
 
-        <div class="max-w-7xl mx-auto px-6">
-            <div
-                class="bg-zinc-900/50 border border-white/5 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between relative overflow-hidden">
+        <section id="contact" class="py-24 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                <div
+                    class="bg-zinc-900/50 border border-white/5 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center justify-between relative overflow-hidden">
                 <div
                     class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none">
                 </div>
@@ -1576,14 +1541,6 @@
                     </div>
                 </div>
 
-                <!-- Footer Call to Action -->
-                <div class="max-w-4xl mx-auto px-6 py-24 border-t border-white/10 text-center">
-                    <h2 class="text-3xl font-bold text-white mb-8">Interested in similar AI solutions?</h2>
-                    <button
-                        onclick="closeProject(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 300);"
-                        class="inline-flex items-center bg-blue-500 text-black px-10 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20">
-                        Let's Discuss Your Project <i data-lucide="message-square" class="ml-2 w-5 h-5"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -1828,11 +1785,12 @@
             }
 
             function closeProject() {
-                projectModal.classList.add('opacity-0');
+                projectModal.classList.add('opacity-0', 'pointer-events-none');
                 projectModal.querySelector('> div').classList.add('translate-y-12', 'opacity-0');
+                document.body.style.overflow = ''; // Unlock body immediately
                 setTimeout(() => {
                     projectModal.classList.add('hidden');
-                    document.body.style.overflow = '';
+                    projectModal.classList.remove('pointer-events-none');
                 }, 500);
             }
 
